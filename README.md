@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Getting Started with Creating a Todo-List in React 
+ A React component called App  represents a todo list application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The component uses the useState hook to define three state variables: text, task, and editButton. The text state variable holds the value of the input field where users can enter their tasks. The task state variable is an array that stores the list of tasks. The editButton state variable represents the label for the edit button, which toggles between "edit" and "update".
 
-## Available Scripts
 
-In the project directory, you can run:
+The inputChange function is an event handler that is called whenever the value of the input field changes. It updates the text state variable with the new value entered by the user.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The addTasks function is triggered when the user clicks the "Add" button. It adds the current value of the text state variable (representing a new task) to the task array using the spread operator. This creates a new array with the existing tasks and the new task, and then updates the task state variable with the new array.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+The deleteTask function is called when the user clicks the "Delete" button associated with a specific task. It filters the task array to remove the task with the given id (index). The filtered array is then assigned to the task state variable using setTask, effectively updating the task list.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+The editFunction is called when the user clicks the edit button associated with a task. It takes items (the task text) and index as parameters. If the editButton state variable is set to "edit," it changes the button label to "update" and sets the text state variable to the items value, allowing the user to edit the task. If the editButton is already set to "update," it reverts the button label back to "edit," updates the task at the specified index in the task array with the new text value, clears the text state variable, and effectively updates the task list.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The task.map function is used to iterate over the task array and render a <p> element for each task. Each <p> element contains the task text, an edit button, and a delete button. The key prop is set to the index to provide a unique identifier for React to efficiently update the list when changes occur.
