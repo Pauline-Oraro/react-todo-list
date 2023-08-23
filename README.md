@@ -1,4 +1,5 @@
-# Getting Started with Creating a Todo-List in React 
+## Getting Started with Creating a Todo-List in React 
+
  A React component called App  represents a todo list application.
 
 The component uses the useState hook to define three state variables: text, task, and editButton. The text state variable holds the value of the input field where users can enter their tasks. The task state variable is an array that stores the list of tasks. The editButton state variable represents the label for the edit button, which toggles between "edit" and "update".
@@ -17,3 +18,7 @@ The editFunction is called when the user clicks the edit button associated with 
 
 
 The task.map function is used to iterate over the task array and render a <p> element for each task. Each <p> element contains the task text, an edit button, and a delete button. The key prop is set to the index to provide a unique identifier for React to efficiently update the list when changes occur.
+
+### You can view the live demo here
+
+[react todo list](https://todo-list-paulineoraro.netlify.app/)
